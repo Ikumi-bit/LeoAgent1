@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask
 import os
 
 app = Flask(__name__)
@@ -6,10 +6,6 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     return "Leo is awake."
-
-@app.route("/callback", methods=["POST"])
-def callback():
-    return "OK"
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
